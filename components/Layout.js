@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import NavbarWeb from '../components/NavbarWeb' 
-
+import Footer from '../components/Footer'
 
 const Layout = (props) => (
 
@@ -12,9 +12,20 @@ const Layout = (props) => (
             
         </Head>
 
-        <NavbarWeb />
+        <NavbarWeb className="navbar" />
         
         {props.children}
+
+      
+
+        <Footer />
+
+        <style jsx>{`
+        
+           
+        
+        `}
+        </style>
     </div>
 
 );

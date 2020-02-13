@@ -4,8 +4,8 @@ import Link from 'next/link'
 const NavbarWeb = () => (
 
   
-  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+  <Navbar collapseOnSelect className="navbar-wrapper" expand="lg" bg="dark" variant="dark">
+    <Navbar.Brand href="#home">The Weather App</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="mr-auto">
@@ -22,6 +22,11 @@ const NavbarWeb = () => (
     </Navbar.Collapse>
 
     <style jsx>{`
+      
+      .navbar-wrapper {
+        height: 139;
+      }
+    
       a {
         margin-right: 40px;
         color: #FFF;
