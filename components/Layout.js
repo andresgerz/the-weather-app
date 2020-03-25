@@ -4,29 +4,24 @@ import Footer from '../components/Footer'
 
 const Layout = (props) => (
 
-    <div>
+  <div>
 
-        <Head>
+    <Head>
+      <title>The Weather App</title>  
+    </Head>
+
+    <NavbarWeb className="navbar" />
         
-            <title>The Weather App</title>
-            
-        </Head>
+      {props.children}
+      <Footer />
 
-        <NavbarWeb className="navbar" />
-        
-        {props.children}
-
-      
-
-        <Footer />
-
-        <style jsx>{`
+      <style jsx>{`
         
            
         
         `}
-        </style>
-    </div>
+      </style>
+  </div>
 
 );
 

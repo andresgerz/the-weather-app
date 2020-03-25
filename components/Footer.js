@@ -2,24 +2,23 @@
 
 const Footer = () => (
     
-    <div className="footer-wrapper">
-        Footer
+  <div className="footer-wrapper">
+    Footer
 
 
-        <style jsx>{`
+    <style jsx>{`
         
-            .footer-wrapper {
+      .footer-wrapper {
                 
-                width: 100%;
-                height: 186px;
-                background-color: #262936;
-                color: #FFF;
-            }
+      width: 100%;
+      height: 186px;
+      background-color: #262936;
+      color: #FFF;
+  }
         
-        `}
-        </style>
-
-    </div>
+  `}
+    </style>
+  </div>
 );
 
 export default Footer;
