@@ -10,10 +10,10 @@ const Footer = () => (
         
       .footer-wrapper {
                 
-      width: 100%;
-      height: 186px;
-      background-color: #262936;
-      color: #FFF;
+        width: 100%;
+        height: 186px;
+        background-color: #262936;
+        color: #FFF;
   }
         
   `}

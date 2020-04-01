@@ -5,8 +5,8 @@ const Find = () => (
   <div className="find-wrapper">
     <Form className="form-wrapper"> 
       
-      <Form.Control className="form-control" placeholder="Buenos Aires, AR " autoFocus/>
-      <Button className="form-button" variant="primary" type="submit">
+      <Form.Control className="form-display" name="form-display" placeholder="Buenos Aires, AR " autoFocus/>
+      <Button className="form-button" type="submit">
         Find
       </Button>
 
@@ -16,26 +16,30 @@ const Find = () => (
     <style jsx>{`
 
       .find-wrapper {
-        width: 900px;
-        height: 50px;
-        margin: 0 auto;
-        border: 1px solid pink;
+        width: 80%;
+        padding: 70px 0px 0px 178px;
       }
       
-      .form-control {
+      .form-wrapper {
+        width: 600px;
+        height: 50px;
+        border: 1px solid red;
+        
+      }
+      
+      .form-display {
         width: 500px;
         height: 156px;
         float: left;
-      }
-
-      .form-wrapper {
-        height: 400px;
-        border: 1px solid red;
 
       }
+
 
       .form-button {
+        margin: -40px 0px 0px 0px;
+        color: red;
         float: right;
+
       }
 
     `}

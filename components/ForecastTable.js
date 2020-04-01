@@ -9,11 +9,13 @@ class ForecastTable extends Component {
 
     this.state = {
       days: [ 
-        [moment().day(0).locale("en").format("dddd"), "        " + moment().format("DD MMM")],
-        moment().day(1).locale("en").format("dddd"),
-        moment().day(2).locale("en").format("dddd"),
-        moment().day(3).locale("en").format("dddd"),
-        moment().day(4).locale("en").format("dddd")
+        [moment().day(3).locale("en").format("dddd"), moment().format("DD MMM")],
+        [moment().day(4).locale("en").format("dddd"),],
+        [moment().day(5).locale("en").format("dddd"),],
+        [moment().day(6).locale("en").format("dddd"),],
+        [moment().day(7).locale("en").format("dddd"),],
+        [moment().day(8).locale("en").format("dddd"),],
+        [moment().day(9).locale("en").format("dddd"),]
      ],
       dateToday: moment().day(0)
     }
@@ -29,7 +31,7 @@ class ForecastTable extends Component {
         {this.state.days.map((day,index) => {
           return(
             <li className="days">
-              <div className="top">{day}</div>
+              <div className="top"><p>{day[0]}</p><p>{day[1]}</p></div>
               <div className="bottom"></div>
             </li>
           )
@@ -45,7 +47,11 @@ class ForecastTable extends Component {
             height: 284px;
             color: #FFF;
             font-size: 11px;
-            
+            margin: auto;
+            padding: 0;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
                     
             /*CSS Flexbox*/
             display: flex;
@@ -60,13 +66,14 @@ class ForecastTable extends Component {
 
 
           .days {
-            width: 110px;
+            width: 120px;
             height: 100%;
           }
 
 
           .top {
             height: 41px;
+            padding-top: 14px;
           }
 
 
@@ -74,7 +81,23 @@ class ForecastTable extends Component {
             height: 244px;
 
           }
-        
+          
+          
+          .top p {
+            margin: 0px;
+            width: 80px;
+          }
+
+
+          .top:nth-of-type(2) p {
+            float: right;
+          }
+           
+
+          .days:nth-of-type(n+2) .top {
+            text-align: center;
+          }
+
 
           .table-wrapper .days:nth-of-type(2n) .top {
             background-color: #232530;

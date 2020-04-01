@@ -27,9 +27,10 @@ const Index = () => (
                     
           height: 350px;
           background-color: #585B6D;
-      }
-
-      .wrapper-middle {
+          
+        }
+        
+        .wrapper-middle {
           
           height: 685.5px;
           background-color: #1D202A;
