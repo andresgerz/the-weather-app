@@ -15,12 +15,6 @@ const Layout = (props) => (
       {props.children}
       <Footer />
 
-      <style jsx>{`
-        
-           
-        
-        `}
-      </style>
   </div>
 
 );

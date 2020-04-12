@@ -1,5 +1,7 @@
 import Layout from '../components/Layout'
 
+import '../styles/index.scss'
+
 const Maps = () => (
 
     <Layout>
