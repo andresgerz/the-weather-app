@@ -1,7 +1,7 @@
 // Components
-import Layout from '../components/Layout'
-import ForecastTable from '../components/ForecastTable';
-import Find from '../components/Find';
+import Layout from '../src/components/Layout'
+import ForecastTable from '../src/components/ForecastTable';
+import Find from '../src/components/Find';
 
 import '../styles/index.scss'
 

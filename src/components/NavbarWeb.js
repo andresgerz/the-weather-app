@@ -1,6 +1,6 @@
-import { Nav, Navbar } from 'react-bootstrap'
-import Link from 'next/link'
-import Cloud from '../public/weather-icons-master/svg/wi-cloud.svg';
+import { Nav, Navbar } from 'react-bootstrap';
+import Link from 'next/link';
+import Cloud from '../weather-icons-master/svg/wi-cloud.svg';
 
 const NavbarWeb = () => (
 
