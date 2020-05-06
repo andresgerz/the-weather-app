@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 const Layout = (props) => (
 
-  <div>
+  <>
 
     <Head>
       <title>The Weather App</title>  
@@ -15,7 +15,7 @@ const Layout = (props) => (
       {props.children}
       <Footer />
 
-  </div>
+  </>
 
 );
 

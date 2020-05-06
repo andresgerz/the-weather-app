@@ -11,19 +11,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Index = () => (
 
   <Layout>
-    <div>
-      <div className="wrapper-top">
-        <Find />
-      </div>
-      <div className="wrapper-middle">
-        <ForecastTable />
-      </div>
-      <div className="wrapper-bottom"></div>
-
-
-
+    <div className="wrapper-top">
+      <Find />
     </div>
-
+    <div className="wrapper-middle">
+      <ForecastTable />
+    </div>
+    <div className="wrapper-bottom"></div>
   </Layout>
 );
 
