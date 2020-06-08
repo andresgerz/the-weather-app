@@ -1,7 +1,7 @@
 // global variables
 $blue: #00a6d4;
 $dark_blue: #161d26;
-
+$blue_icons: #33bdd7;
 
 .navbar-wrapper {
   width: 100%;
@@ -269,4 +269,57 @@ li {
 .footer {
   width: 73%;
   height: 100%;
+}
+
+
+.temperatures-week {
+  text-align: center;
+}
+
+
+.temperatures-max {
+  font-size: 20px;
+}
+
+
+.temperatures-max {
+  font-size: 13px;
+}
+
+
+.icon-today-wrapper {
+  padding-top: 90px;
+  float: left;
+}
+
+
+.icon-today {
+  font-size: 60px;
+  color: $blue_icons;
+}
+
+
+.icons-week-wrapper {
+  width: 100%;
+  height: 128px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+
+.icons-week {
+  font-size: 31px;
+  color: $blue_icons;
+}
+
+
+.today-data {
+  width: 256px;
+  float: left;
+  padding-left: 24px;
+}
+
+
+.today-data .city {
+  margin: 37px 0 34px 0;
 }
