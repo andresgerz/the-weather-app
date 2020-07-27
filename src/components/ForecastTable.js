@@ -40,12 +40,12 @@ library.add(
 
 
 const days = [ 
-  [moment().day(1).locale("en").format("dddd"), 
-  moment().day(1).locale("en").format("DD MMM")],
+  [moment().day(0).locale("en").format("dddd"), 
+  moment().day(0).locale("en").format("DD MMM")],
+  moment().day(1).locale("en").format("dddd"),
   moment().day(2).locale("en").format("dddd"),
   moment().day(3).locale("en").format("dddd"),
-  moment().day(4).locale("en").format("dddd"),
-  moment().day(5).locale("en").format("dddd")
+  moment().day(4).locale("en").format("dddd")
 ]
 
 
@@ -86,7 +86,7 @@ const ForecastTable = () => {
     const URL = 'https://api.openweathermap.org/data/2.5/forecast?q=';
     const KEY = '&units=metric&appid=6200f7fd2611fa3c695ade64a041d5f7';
 
-    axios.get(URL + 'Posadas, AR' + KEY)
+    axios.get(URL + 'Resistencia, AR' + KEY)
       .then(result => {
 
         console.log(result);
@@ -103,27 +103,26 @@ const ForecastTable = () => {
       
       
       return(
-        <ul className="table-wrapper">
+        <ul className="table-container">
         {
         
         datas.map((day,index) => {
             
           if (index === 0) {
-            console.log(city);
             return(
               <li className="days" key={String(index)}>
                 <div className="top">
-                  <p>{days[index][0]}</p>
-                  <p>{days[index][1]}</p>
+                <div className="today-date">{days[index][0]}</div>
+                  <div className="today-day">{days[index][1]}</div>
                 </div>
                 
                 <div className="bottom">
                   <div className="today-data">
                     <p className="city">{city}</p>
-                    <h1>{day.main.temp + " °C"}</h1>
+                    <h1>{day.main.temp.toFixed(1) + " °C"}</h1>
                     <p>{day.main.pressure + " hPa"}</p>
                     <p>{day.main.humidity + " %"}</p>
-                    <p>{day.wind.speed + " km/h"}</p>  
+                    <p>{day.wind.speed.toFixed(1) + " km/h"}</p>  
                   </div>
                   <div className="icon-today-wrapper">
                     <FontAwesomeIcon
@@ -149,8 +148,8 @@ const ForecastTable = () => {
                     />
                   </div>
                   <div className="temperatures-week">
-                    <p className="temperatures-max">{day.main.temp_max + " °C"}</p>
-                    <p className="temperatures-min">{day.main.temp_min + " °C"}</p>
+                    <p className="temperatures-max">{day.main.temp_max.toFixed(1) + " °C"}</p>
+                    <p className="temperatures-min">{day.main.temp_min.toFixed(1) + " °C"}</p>
                   </div>
                 </div>
               </li>)

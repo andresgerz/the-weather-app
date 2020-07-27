@@ -2,6 +2,7 @@
 import Layout from '../src/components/Layout'
 import ForecastTable from '../src/components/ForecastTable';
 import Find from '../src/components/Find';
+import News from '../src/components/News';
 
 import '../styles/index.scss'
 
@@ -16,8 +17,8 @@ const Index = () => (
     </div>
     <div className="wrapper-middle">
       <ForecastTable />
+      <News />
     </div>
-    <div className="wrapper-bottom"></div>
   </Layout>
 );
 
