@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavbarWeb from './NavbarWeb' 
 import Footer from './Footer'
 
+
 const Layout = (props) => (
 
   <>
@@ -11,7 +12,7 @@ const Layout = (props) => (
     </Head>
 
     <NavbarWeb className="navbar" />
-        
+ 
       {props.children}
       <Footer />
 

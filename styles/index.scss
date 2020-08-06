@@ -332,15 +332,32 @@ li {
 }
 
 
-#forecast {
+#forecast-container {
+  height: 360px;
   background-color: #585B6D;
   color: #fff;
   padding: 30px;
 }
 
 
-#forecast .table-container {
+#forecast-container .table-container {
   top: 0;
+}
+
+
+@media(max-width: 1014px) {
+  
+  #forecast-container {
+    height: 644px; 
+  }
+}
+
+
+@media(max-width: 594px) {
+  
+  #forecast-container {
+    height: 928px; 
+  }
 }
 
 

@@ -7,7 +7,7 @@ import '../styles/index.scss'
 const Forecast = () => (
 
     <Layout>
-        <div id="forecast">
+        <div id="forecast-container">
           <ForecastTable />
         </div>
       

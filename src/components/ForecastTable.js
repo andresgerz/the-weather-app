@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import moment from "moment";
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
+import { DataContext } from '../context/Context'
 
 
 import { isArray } from 'util';
@@ -22,6 +23,8 @@ import {
 
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { type } from "os";
+import { createContext } from "vm";
 
 library.add(
   fab,
@@ -49,12 +52,11 @@ const days = [
 ]
 
 
-
-
 const ForecastTable = () => {
-  
+
+  const { state } = useContext(DataContext);
   const [datas, setDatas] = useState([]);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState('');
   
 
   const convertToIcons = (id) => {
@@ -85,11 +87,10 @@ const ForecastTable = () => {
     
     const URL = 'https://api.openweathermap.org/data/2.5/forecast?q=';
     const KEY = '&units=metric&appid=6200f7fd2611fa3c695ade64a041d5f7';
-
-    axios.get(URL + 'Resistencia, AR' + KEY)
+    
+    axios.get(URL + state.city + KEY)
       .then(result => {
 
-        console.log(result);
         setCity(result.data.city.name + ", " + result.data.city.country)
         setDatas(result.data.list.filter(objectDay => {
           return String(objectDay.dt_txt).split(" ")[1] === "12:00:00";
@@ -99,7 +100,7 @@ const ForecastTable = () => {
         )
         .catch(err => console.log(err));
         
-      }, [])
+      }, [state.city])
       
       
       return(
