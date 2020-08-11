@@ -24,7 +24,7 @@ const NavbarWeb = () => (
           </Nav>
           <Nav>
             <Link href="/"><a>Home</a></Link>
-            <Link href="/news"><a>News</a></Link>
+            <Link href="/contact"><a>Contact</a></Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

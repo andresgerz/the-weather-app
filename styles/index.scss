@@ -321,7 +321,7 @@ li {
 
 
 .today-data {
-  width: 256px;
+  width: 200px;
   float: left;
   padding-left: 24px;
 }
@@ -342,22 +342,6 @@ li {
 
 #forecast-container .table-container {
   top: 0;
-}
-
-
-@media(max-width: 1014px) {
-  
-  #forecast-container {
-    height: 644px; 
-  }
-}
-
-
-@media(max-width: 594px) {
-  
-  #forecast-container {
-    height: 928px; 
-  }
 }
 
 
@@ -389,11 +373,80 @@ li {
 
 
 .news-container .item {
-  width: 300px;
+  max-width: 300px;
+  height: 200px;
   font-size: 12px;
+  margin-top: 20px;
 }
 
 
-#news {
+#contact {
+  height: 100vh;
   background-color: #1D202A;
+  color: #fff;
+  padding: 20px;
+}
+
+
+@media(max-width: 954px) {
+  
+  .wrapper-middle {
+    height: 804px; 
+  }
+
+
+  .news-container {
+    position: relative;
+    top: 284px;
+  }
+}
+
+
+@media(max-width: 914px) {
+  
+  .wrapper-middle {
+    height: 1004px; 
+  }
+
+
+  .news-container {
+    position: relative;
+    top: 284px;
+  }
+}
+
+
+@media(max-width: 614px) {
+  
+  .wrapper-middle {
+    height: 1224px; 
+  }
+
+
+  .news-container {
+    position: relative;
+    top: 284px;
+  }
+}
+
+
+@media(max-width: 534px) {
+  
+  .wrapper-middle {
+    height: 1508px; 
+  }
+
+
+  .news-container {
+    position: relative;
+    top: 568px;
+  }
+}
+
+
+@media(max-width: 425px) {
+  
+  .item-date {
+    display: none;
+  }
 }

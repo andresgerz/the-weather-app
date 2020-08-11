@@ -36,7 +36,7 @@ const Find = () => {
             type="text"
             value={city}
             onChange={handleChange}
-            placeholder="Buenos Aires, AR" 
+            placeholder="e.g.: Buenos Aires, AR" 
             autoFocus
           />
           <button className="form-button" type="submit">
