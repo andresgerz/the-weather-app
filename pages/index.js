@@ -5,7 +5,7 @@ import Find from '../src/components/Find';
 import News from '../src/components/News';
 import { DataProvider } from '../src/context/Context'
 
-import '../styles/index.scss'
+import '../styles/main.scss'
 
 // CSS
 import 'bootstrap/dist/css/bootstrap.min.css';

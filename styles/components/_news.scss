@@ -1,0 +1,28 @@
+.news-container {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  margin: 0 auto;
+}
+
+.item-date {
+  color: $color1;
+  float: left;
+  font-size: 18px;
+  padding-top: 10px;
+  text-align: center;
+  width: 80px;
+}
+
+.item-text {
+  float: left;
+  width: 220px;
+}
+
+.news-container .item {
+  font-size: 12px;
+  height: 200px;
+  margin-top: 20px;
+  max-width: 300px;
+}

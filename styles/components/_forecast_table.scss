@@ -1,0 +1,114 @@
+.days:first-child {
+  width: 420px;
+}
+
+.days {
+  height: 100%;
+  width: 120px;
+}
+
+.top {
+  height: 41px;
+  padding-top: 14px;
+}
+
+.bottom {
+  height: 244px;
+}
+
+.days .top p {
+  text-align: center;
+  width: 100%;
+}
+
+.days .top {
+  display: flex;
+  flex-flow: row;
+}
+
+.today-date {
+  padding-left: 20px;
+  text-align: left;
+  width: 50%;
+}
+
+.today-day {
+  padding-right: 20px;;
+  text-align: right;
+  width: 50%;
+}
+
+.top:nth-of-type(2) p {
+  float: right;
+}
+  
+.days:nth-of-type(n+2) .top {
+  text-align: center;
+}
+
+.table-container .days:nth-of-type(2n) .top {
+  background-color: #232530;
+}
+
+.table-container .days:nth-of-type(2n + 1) .top {
+  background-color: #2D303D;
+}
+
+.table-container .days:nth-of-type(2n) .bottom {
+  background-color: #262936;
+}
+
+.table-container .days:nth-of-type(2n + 1) .bottom {
+  background-color: #323544;
+}
+
+.temperatures-week {
+  text-align: center;
+}
+
+.temperatures-max {
+  font-size: 20px;
+}
+
+.icon-today-wrapper {
+  float: left;
+  padding-top: 90px;
+}
+
+.icon-today {
+  color: $color2;
+  font-size: 60px;
+}
+
+.icons-week-wrapper {
+  height: 128px;
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.icons-week {
+  color: $color2;
+  font-size: 31px;
+}
+
+.today-data {
+  float: left;
+  padding-left: 24px;
+  width: 200px;
+}
+
+.today-data .city {
+  margin: 37px 0 34px 0;
+}
+
+#forecast-container {
+  background-color: #585B6D;
+  color: #fff;
+  height: 360px;
+  padding: 30px;
+}
+
+#forecast-container .table-container {
+  top: 0;
+}
