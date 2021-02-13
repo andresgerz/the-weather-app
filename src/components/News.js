@@ -1,5 +1,7 @@
 import moment from 'moment'
 
+import './News.module.scss'
+
 const News = () => (
   <div className="news-container">
     <div className="item">

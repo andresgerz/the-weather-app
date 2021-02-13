@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useContext } from 'react'
 import { DataContext } from '../context/Context'
 
+import './Find.module.scss'
 
 const Find = () => {
 

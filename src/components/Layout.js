@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavbarWeb from './NavbarWeb' 
 import Footer from './Footer'
 
+import './Layout.module.scss'
 
 const Layout = (props) => (
 

@@ -4,6 +4,7 @@ import { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { DataContext } from '../context/Context'
 
+import './ForecastTable.module.scss'
 
 import { isArray } from 'util';
 import { library } from '@fortawesome/fontawesome-svg-core';

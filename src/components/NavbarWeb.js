@@ -2,6 +2,8 @@ import { Nav, Navbar } from 'react-bootstrap';
 import Link from 'next/link';
 import Cloud from '../weather-icons-master/svg/wi-cloud.svg';
 
+import './NavbarWeb.module.scss'
+
 const NavbarWeb = () => (
 
   <div className="navbar-wrapper">
