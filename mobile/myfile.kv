@@ -1,0 +1,97 @@
+# Menu item in the DrawerList list.
+<ItemDrawer>:
+    theme_text_color: "Custom"
+    on_release: self.parent.set_color_item(self)
+
+    IconLeftWidget:
+        id: icon
+        icon: root.icon
+        theme_text_color: "Custom"
+        text_color: root.text_color
+
+
+<ContentNavigationDrawer>:
+    orientation: "vertical"
+    padding: "8dp"
+    spacing: "8dp"
+
+    AnchorLayout:
+        anchor_x: "left"
+        size_hint_y: None
+        height: avatar.height
+
+        Image:
+            id: avatar
+            size_hint: None, None
+            size: "56dp", "56dp"
+            source: "data/logo/kivy-icon-256.png"
+
+    MDLabel:
+        text: "The Weather App"
+        font_style: "Button"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    MDLabel:
+        text: "kivydevelopment@gmail.com"
+        font_style: "Caption"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    ScrollView:
+
+        DrawerList:
+            id: md_list
+
+Screen:
+    NavigationLayout:
+
+        ScreenManager:
+
+            Screen:
+                MDBoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "The Weather App"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
+
+                    ScrollView:
+                        MDGridLayout:
+                            rows: 3
+
+                            MDBoxLayout:
+                                canvas:
+                                    Color:
+                                        rgba: 0,0,1,1
+                                    Rectangle:
+                                        size: 360,500
+
+                                MDLabel:
+                                    text: "The Weather 1"                                        
+                            MDBoxLayout:
+                                canvas:
+                                    Color:
+                                        rgba: 0,1,0,1
+                                    Rectangle:
+                                        size: 360,500
+                                
+                                MDLabel:
+                                    text: "The Weather 2"
+
+                            MDBoxLayout:
+                                canvas:
+                                    Color:
+                                        rgba: 1,0,0,1
+                                    Rectangle:
+                                        size: 360,500
+
+                                MDLabel:
+                                    text: "The Weather 3" 
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            ContentNavigationDrawer:
+                id: content_drawer
