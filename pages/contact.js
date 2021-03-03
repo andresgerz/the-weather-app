@@ -1,7 +1,7 @@
 import Layout from '../src/components/Layout'
 import News from '../src/components/News'
 
-const News_ = () => (
+const Contact = () => (
   <Layout>
     <div id="contact">
       <h1>Contact</h1>
@@ -12,4 +12,4 @@ const News_ = () => (
   </Layout>
 );
 
-export default News_
+export default Contact

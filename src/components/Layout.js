@@ -15,7 +15,7 @@ const Layout = (props) => (
     <NavbarWeb className="navbar" />
  
       {props.children}
-      <Footer />
+    <Footer />
 
   </>
 
