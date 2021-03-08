@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\RegisteredUserController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
-
+use App\Http\Controllers\Api\ConsumeApiController;
+use App\Http\Controllers\Api\RegisteredUserController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +22,7 @@ Route::post("login", [UserController::class, "login"]);
 
 Route::post("register", [RegisteredUserController::class, "store"])->middleware(['guest']);
 
+Route::get("placeholder", [ConsumeApiController::class, "index"]);
 
 
 Route::middleware('auth:api')->group(function() {
