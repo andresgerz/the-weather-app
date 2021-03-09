@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ConsumeApiController;
 use App\Http\Controllers\Api\RegisteredUserController;
+use App\Http\Controllers\Api\EventController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,20 +19,24 @@ use App\Http\Controllers\Api\RegisteredUserController;
 |
 */
 
-
+/* 
 Route::post("login", [UserController::class, "login"]);
 
 Route::post("register", [RegisteredUserController::class, "store"])->middleware(['guest']);
+ */
+Route::get("weather-data", [ConsumeApiController::class, "index"]);
 
-Route::get("placeholder", [ConsumeApiController::class, "index"]);
+Route::post("event", [EventController::class, "store"]);
 
+Route::get("event", [EventController::class, "show"]);
 
+/* 
 Route::middleware('auth:api')->group(function() {
 
   Route::get("user", [UserController::class, "user"]);
 
 });
-
+ */
 /* 
 // user controller routes
 
