@@ -51,14 +51,7 @@ class EventController extends Controller {
         foreach($events as $event) {
             $event['image'] = Storage::url($event['image']);
         }
-        //$events = Event::all();
-        /* $events = Event::where('image')->update('xyz'); */
-        
-
-        
-        
-
-        /* return response()->json(['img'=> Storage::url('images/201810-smn-visible-jpg')]); */
+     
         return response()->json(['event'=>  $events]);
     }
 }
