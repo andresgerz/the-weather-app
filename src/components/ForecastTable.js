@@ -96,7 +96,7 @@ const ForecastTable = ({}) => {
 
   useEffect( () => {
     
-    axios.get('http://weather-api.lndo.site/api/placeholder')
+    axios.get('http://weather-api.lndo.site/api/weather-data')
       .then(result => {
         console.log(result);
         let dataCity = result.data.city; 
