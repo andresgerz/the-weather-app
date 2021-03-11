@@ -1,7 +1,7 @@
 import Layout from '../src/components/Layout'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import FormExample from '../src/components/FormExample'
+import FormEvent from '../src/components/FormEvent'
 
 const Events = () => {
   const [urlImg, setUrlImg] = useState('');
@@ -24,11 +24,10 @@ const Events = () => {
  
 
   return (
-
     <Layout>
       <div>
         <h1>Events</h1>
-        <FormExample />
+        <FormEvent />
       </div>
     </Layout>
   )

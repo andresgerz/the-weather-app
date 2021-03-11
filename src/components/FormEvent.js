@@ -1,36 +1,48 @@
 import { Formik } from 'formik'
 import * as yup from 'yup';
 import { Form, Col, InputGroup, Button } from 'react-bootstrap'
-
+import axios from 'axios'
 
 const schema = yup.object().shape({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
-  username: yup.string().required(),
-  city: yup.string().required(),
-  state: yup.string().required(),
-  zip: yup.string().required(),
+  eventName: yup.string().required(),
+  category: yup.string().required(),
+  description: yup.string().required(),
   file: yup.mixed().required(),
   terms: yup.bool().required().oneOf([true], 'terms must be accepted'),
 });
 
-const FormExample = () => {
+const FormEvent = () => {
 
-
-
-
-  
   return (
     <Formik
       validationSchema={schema}
-      onSubmit={console.log}
+      onSubmit={(values) => {
+        console.log(values);
+
+        let bodyFormData = new FormData();
+
+        bodyFormData.append('event', values.eventName);                    bodyFormData.append('category', values.category); 
+        bodyFormData.append('description', values.description); 
+        bodyFormData.append('image', values.file); 
+
+        axios({
+          method: "post",
+          url: "http://weather-api.lndo.site/api/event",
+          data: bodyFormData,
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+    }
       initialValues={{
-        firstName: 'Tornado',
-        lastName: 'Otto',
-        username: '',
-        city: '',
-        state: '',
-        zip: '',
+        eventName: 'Tornado',
+        category: '',
+        description: '',
         file: null,
         terms: false,
       }}
@@ -51,16 +63,22 @@ const FormExample = () => {
               <Form.Label>Event</Form.Label>
               <Form.Control
                 type="text"
-                name="firstName"
-                value={values.firstName}
+                name="eventName"
+                value={values.eventName}
                 onChange={handleChange}
-                isValid={touched.firstName && !errors.firstName}
+                isValid={touched.eventName && !errors.eventName}
               />
               <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label>Example select</Form.Label>
-              <Form.Control as="select">
+              <Form.Label>Category</Form.Label>
+              <Form.Control as="select"
+                type="text"
+                name="category"
+                value={values.category}
+                onChange={handleChange}
+                isValid={touched.category && !errors.category}
+                >
                 <option>Cloud Atlas</option>
                 <option>Alert</option>
                 <option>Meteoro</option>
@@ -68,8 +86,14 @@ const FormExample = () => {
             </Form.Group>
           </Form.Row>
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Example textarea</Form.Label>
-            <Form.Control as="textarea" rows={3} />
+            <Form.Label>Description</Form.Label>
+            <Form.Control as="textarea" rows={3} 
+              type="text"
+              name="description"
+              value={values.description}
+              onChange={handleChange}
+              isValid={touched.description && !errors.description}
+            />
           </Form.Group>
           <Form.Group>
             <Form.File
@@ -103,4 +127,4 @@ const FormExample = () => {
   );
 }
 
-export default FormExample
+export default FormEvent
