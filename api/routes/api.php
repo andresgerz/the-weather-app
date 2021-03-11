@@ -22,12 +22,13 @@ use App\Http\Controllers\Api\EventController;
 /* 
 Route::post("login", [UserController::class, "login"]);
 
-Route::post("register", [RegisteredUserController::class, "store"])->middleware(['guest']);
- */
+*/
+Route::get("user", [UserController::class, "show"])->middleware(['guest']);
+Route::post("user", [UserController::class, "register"]);
+
 Route::get("weather-data", [ConsumeApiController::class, "index"]);
 
 Route::post("event", [EventController::class, "store"]);
-
 Route::get("event", [EventController::class, "show"]);
 
 /* 

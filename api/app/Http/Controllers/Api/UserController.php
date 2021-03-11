@@ -1,16 +1,22 @@
 <?php
 
-namespace app\Http\Controllers;
+namespace app\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use app\Models\User;
+use App\Models\User;
 use App\Http\Resources\UserResource;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller {
-    public function me() {
-        return new UserResource(auth()->user());
+   
+    public function register(Request $request) {
+        $user = $request->all();
+        
+        User::create($user);
+
+        return response()->json(['mesage'=> 'File upload successfully']);
     }
 }
