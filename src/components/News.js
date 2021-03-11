@@ -1,4 +1,6 @@
 import moment from 'moment'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 import './News.module.scss'
 
@@ -9,7 +11,7 @@ const News = () => {
     axios.get('http://weather-api.lndo.site/api/event')
       .then(result => {
         console.log(result);
-        setUrlImg(result);
+        
         })
       .catch(err => console.log(err));
         

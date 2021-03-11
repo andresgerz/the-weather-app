@@ -30,8 +30,6 @@ const NavbarWeb = () => (
               <Link href="/events"><NavDropdown.Item className='text-dark' href="#action/3.3">Satellite</NavDropdown.Item></Link>
               <Link href="/events"><NavDropdown.Item className='text-dark' href="#action/3.3">Alerts</NavDropdown.Item></Link>
               <Link href="/events"><NavDropdown.Item className='text-dark' href="#action/3.3">Climatology</NavDropdown.Item></Link>
-              <Link href="/events"><NavDropdown.Item className='text-dark' href="#action/3.3">Space Weather</NavDropdown.Item></Link>
-              <Link href="/events"><NavDropdown.Item className='text-dark' href="#action/3.3">eathquera</NavDropdown.Item></Link>
             </NavDropdown>
             <Link href="/contact"><a>Login</a></Link>
             <Link href="/contact"><a>Contact</a></Link>
