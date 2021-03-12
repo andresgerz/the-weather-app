@@ -1,0 +1,14 @@
+{
+    "name": "andres/api-php-8",
+    "description": "API with PHP 8",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrés",
+            "email": "andres.gerz@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
