@@ -3,3 +3,13 @@ recipe: laravel
 config:
   webroot: api/public
   cache: redis
+
+services:
+  cache:
+    type: redis:5.0
+    portforward: 6380
+    persist: true
+
+tooling:
+  redis-cli:
+    service: cache
