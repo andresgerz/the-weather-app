@@ -4,7 +4,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\Api\ConsumeApiController;
+use App\Http\Controllers\Api\ProxyController;
 use App\Http\Controllers\Api\RegisteredUserController;
 use App\Http\Controllers\Api\EventController;
 
@@ -26,7 +26,7 @@ Route::post("login", [UserController::class, "login"]);
 Route::get("user", [UserController::class, "show"])->middleware(['guest']);
 Route::post("user", [UserController::class, "register"]);
 
-Route::get("weather-data", [ConsumeApiController::class, "index"]);
+Route::get("weather-data/{cityId}", [ProxyController::class, "index"]);
 
 Route::post("event", [EventController::class, "store"]);
 Route::get("event", [EventController::class, "show"]);
