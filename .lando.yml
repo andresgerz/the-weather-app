@@ -6,7 +6,7 @@ config:
 
 services:
   cache:
-    type: redis:5.0
+    type: redis:2.8
     portforward: 6380
     persist: true
 
