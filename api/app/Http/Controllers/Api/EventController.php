@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller {
 
+    /**
+     * write comment
+     * 
+    */
+
     public function store(Request $request) {
         
         $event = $request->all();
@@ -43,8 +48,12 @@ class EventController extends Controller {
 
     }
 
-    public function show() {
+    /**
+     * write comment
+     * 
+    */
 
+    public function show() {
 
         $events = Event::all();
         

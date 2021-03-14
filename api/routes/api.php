@@ -26,7 +26,7 @@ Route::post("login", [UserController::class, "login"]);
 Route::get("user", [UserController::class, "show"])->middleware(['guest']);
 Route::post("user", [UserController::class, "register"]);
 
-Route::get("weather-data/{cityId}", [ProxyController::class, "index"]);
+Route::get("weather-data/{cityId}", [ProxyController::class, "store"]);
 
 Route::post("event", [EventController::class, "store"]);
 Route::get("event", [EventController::class, "show"]);
