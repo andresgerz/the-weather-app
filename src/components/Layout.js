@@ -10,7 +10,9 @@ const Layout = (props) => (
 
     <Head>
       <title>The Weather App</title>  
-    </Head>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="csrf-token" content="{{ csrf_token() }}" />
+      </Head>
 
     <NavbarWeb className="navbar" />
  

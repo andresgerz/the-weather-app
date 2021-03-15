@@ -1,7 +1,9 @@
 import { Formik } from 'formik'
 import * as yup from 'yup';
-import { Form, Col, InputGroup, Button } from 'react-bootstrap'
+import { Form, Col, Button } from 'react-bootstrap'
 import axios from 'axios'
+import $ from 'jquery'
+import http from './http-common'
 
 const schema = yup.object().shape({
   eventName: yup.string().required(),
@@ -19,18 +21,19 @@ const FormEvent = () => {
       onSubmit={(values) => {
         console.log(values);
 
-        let bodyFormData = new FormData();
 
+        let bodyFormData = new FormData();
         bodyFormData.append('event', values.eventName);                    bodyFormData.append('category', values.category); 
         bodyFormData.append('description', values.description); 
         bodyFormData.append('image', values.file); 
 
-        axios({
-          method: "post",
-          url: "http://weather-api.lndo.site/api/event",
-          data: bodyFormData,
-          headers: { "Content-Type": "multipart/form-data" },
-        })
+        const config = {
+          headers: { 
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+        
+        http.post("/api/event", bodyFormData, config)
         .then(function (response) {
           console.log(response);
         })
@@ -57,7 +60,7 @@ const FormEvent = () => {
         errors,
         hasValidation
       }) => (
-        <Form noValidate onSubmit={handleSubmit}>
+        <Form noValidate onSubmit={handleSubmit} encType="multipart/form-data">
           <Form.Row>
             <Form.Group as={Col} md="4" controlId="validationFormik101">
               <Form.Label>Event</Form.Label>
@@ -101,6 +104,7 @@ const FormEvent = () => {
               required
               name="file"
               label="File"
+              type="file"
               onChange={handleChange}
               isInvalid={!!errors.file}
               feedback={errors.file}

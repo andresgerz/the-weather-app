@@ -1,7 +1,7 @@
 import Layout from '../src/components/Layout'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import FormEvent from '../src/components/FormEvent'
+import FormEvent from '../src/components/EventForm/FormEvent'
 
 const Events = () => {
   const [urlImg, setUrlImg] = useState('');
