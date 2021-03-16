@@ -7,6 +7,10 @@ from kivymd.theming import ThemableBehavior
 from kivymd.uix.list import OneLineIconListItem, MDList
 from kivy.core.window import Window
 
+import asyncio
+
+import aiohttp
+
 Window.size = (360, 640)
 
 class ContentNavigationDrawer(BoxLayout):
@@ -34,6 +38,18 @@ class TestNavigationDrawer(MDApp):
         return Builder.load_file('myfile.kv')
 
     def on_start(self):
+        print("api")
+
+        async def getData():
+            async with aiohttp.ClientSession() as session:
+                async with session.get('https://worldweather.wmo.int/en/json/234_en.json') as resp:
+                    print(resp.status)
+                    print(await resp.text())
+
+
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(getData())
+
         icons_item = {
             "folder": "My files",
             "account-multiple": "Shared with me",
