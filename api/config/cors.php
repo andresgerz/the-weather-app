@@ -18,11 +18,7 @@ return [
     'paths' => [
         'api/*', 
         'sanctum/csrf-cookie',
-        'login',
-        'logout',
-        'register',
-        'event',
-        'weather-data'
+        'admin/*',
     ],
 
     'allowed_methods' => ['*'],
