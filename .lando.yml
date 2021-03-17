@@ -2,7 +2,6 @@ name: weather-api
 recipe: laravel
 config:
   webroot: api/public
-  cache: redis
 
 services:
   cache:
