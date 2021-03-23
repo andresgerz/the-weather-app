@@ -89,14 +89,15 @@ const ForecastTable = ({}) => {
   const { state } = useContext(DataContext);
   const [datas, setDatas] = useState([]);
   const [city, setCity] = useState('');
+
   
   const convertDate = (date) => {
     return moment.parseZone(date).format("dddd");
   }
-
+  
   useEffect( () => {
     
-    axios.get('http://weather-api.lndo.site/api/weather-data')
+    axios.get(`http://weather-api.lndo.site/api/weather-data/${state.city}`)
       .then(result => {
         console.log(result);
         let dataCity = result.data.city; 

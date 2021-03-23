@@ -13,7 +13,7 @@ let reducer = (state, action) => {
 };
 
 const initialState = {
-  city: 'Resistencia, AR'
+  city: '294'
 }
 
 const DataContext = React.createContext(initialState);
