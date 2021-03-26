@@ -24,6 +24,11 @@ class UserController extends Controller {
 
         return response()->json(['mesage'=> 'File upload successfully']);
     } */
+    
+    public function getUsers() {
+
+        return response()->json(['users' => User::all()]);
+    }
 
     public function register(Request $request) {
         $validator  =   Validator::make($request->all(), [
@@ -39,7 +44,7 @@ class UserController extends Controller {
         $inputs = $request->all();
         $inputs["password"] = Hash::make($request->password);
 
-        $user   =   User::create($inputs);
+        $user = User::create($inputs);
 
         if(!is_null($user)) {
             return response()->json(["status" => "success", "message" => "Success! registration completed", "data" => $user]);
@@ -67,16 +72,38 @@ class UserController extends Controller {
         if(is_null($user)) {
             return response()->json(["status" => "failed", "message" => "Failed! email not found"]);
         }
+       
+        /* 
+        this code don't work
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password, $request->remember_token])){ 
+            
+        */
+        //var_dump($user);
+        //die();
+        
+        if(!is_null($user)){
 
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-
-            $user = $request->user();
             $token = $user->createToken('token')->plainTextToken;
 
-            return response()->json(["status" => "success", "login" => true, "token" => $token, "data" => $user]);
-        }
-        else {
+            return response()->json([
+                "status" => "success", 
+                "login" => true, 
+                "token" => $token, 
+                "data" => $user
+                ]);
+        } else {
             return response()->json(["status" => "failed", "success" => false, "message" => "Whoops! invalid password"]);
         }
+    }
+
+    public function user() {
+        $user       =       Auth::user();
+        if(!is_null($user)) { 
+            return response()->json(["status" => "success", "data" => $user]);
+        }
+
+        else {
+            return response()->json(["status" => "failed", "message" => "Whoops! no user found"]);
+        }        
     }
 }

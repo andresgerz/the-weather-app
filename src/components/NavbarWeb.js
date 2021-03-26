@@ -1,6 +1,5 @@
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import Link from 'next/link';
-import Cloud from '../weather-icons-master/svg/wi-cloud.svg';
 
 import './NavbarWeb.module.scss'
 
@@ -9,7 +8,7 @@ const NavbarWeb = () => (
   <div className="navbar-wrapper">
     <div className="navbar-icon-wrapper">
       <div className="navbar-icon">
-        <Cloud />
+        
       </div>
       <div className="navbar-icon-title">
         <h1>The weather app</h1>
@@ -31,7 +30,7 @@ const NavbarWeb = () => (
               <Link href="/events"><NavDropdown.Item className='text-dark' href="#action/3.3">Alerts</NavDropdown.Item></Link>
               <Link href="/events"><NavDropdown.Item className='text-dark' href="#action/3.3">Climatology</NavDropdown.Item></Link>
             </NavDropdown>
-            <Link href="/contact"><a>Login</a></Link>
+            <Link href="/login"><a>Login</a></Link>
             <Link href="/contact"><a>Contact</a></Link>
           </Nav>
         </Navbar.Collapse>

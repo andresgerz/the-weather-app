@@ -24,15 +24,25 @@ Route::post("login", [UserController::class, "login"]);
 MIDDLEWARES
 */
 
-Route::get("user", [UserController::class, "show"]);
-Route::post("user", [UserController::class, "register"]);
 
-Route::post("login", [UserController::class, "login"]);
+// Temporary, only testing
 
-Route::get("weather-data/{cityId}", [ProxyController::class, "store"]);
 
-Route::get("event", [EventController::class, "show"]);
-Route::post("event", [EventController::class, "store"]);
+/* Route::middleware('auth:sanctum')->group(
+  function () {
+    
+  }
+); */
+
+Route::post("/user/login", [UserController::class, "login"]);
+Route::get("/user", [UserController::class, "getUsers"]);
+Route::post("/user/register", [UserController::class, "register"]);
+
+
+Route::get("/weather-data/{cityId}", [ProxyController::class, "store"]);
+
+Route::get("/event", [EventController::class, "show"]);
+Route::post("/event", [EventController::class, "store"]);
 
 /* 
 Route::middleware('auth:api')->group(function() {

@@ -13,6 +13,7 @@ const schema = yup.object().shape({
   terms: yup.bool().required().oneOf([true], 'terms must be accepted'),
 });
 
+
 const FormEvent = () => {
 
   return (
