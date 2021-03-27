@@ -8,7 +8,8 @@ from kivymd.uix.list import OneLineIconListItem, MDList
 from kivy.core.window import Window
 
 import asyncio
-
+import json
+import pprint
 import aiohttp
 
 Window.size = (360, 640)
@@ -42,9 +43,20 @@ class TestNavigationDrawer(MDApp):
 
         async def getData():
             async with aiohttp.ClientSession() as session:
-                async with session.get('https://worldweather.wmo.int/en/json/234_en.json') as resp:
+                async with session.get('http://weather-api.lndo.site/api/weather-data/294') as resp:
+                    
                     print(resp.status)
-                    print(await resp.text())
+                    #print(type(await resp.text()))
+
+                    
+                    
+                    # data type: <class 'dict'>
+                    parsed = json.loads(await resp.text())
+                    #print(type(parsed))
+                    print(parsed['city']['forecast']['forecastDay'])
+                    
+                    # print pretty json 
+                    #print(json.dumps(parsed, indent=4, sort_keys=True))
 
 
         loop = asyncio.get_event_loop()

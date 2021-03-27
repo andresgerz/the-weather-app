@@ -59,36 +59,58 @@ Screen:
 
                     ScrollView:
                         MDGridLayout:
+
                             rows: 3
 
+                            
                             MDBoxLayout:
-                                canvas:
-                                    Color:
-                                        rgba: 0,0,1,1
-                                    Rectangle:
-                                        size: 360,500
+                                md_bg_color: 0,0,1,1
 
                                 MDLabel:
-                                    text: "The Weather 1"                                        
-                            MDBoxLayout:
-                                canvas:
-                                    Color:
-                                        rgba: 0,1,0,1
-                                    Rectangle:
-                                        size: 360,500
-                                
-                                MDLabel:
-                                    text: "The Weather 2"
+                                    color: 1,1,1,1
+                                    text: "The Weathe 1"                                        
+                                    
 
                             MDBoxLayout:
-                                canvas:
-                                    Color:
-                                        rgba: 1,0,0,1
-                                    Rectangle:
-                                        size: 360,500
+                                md_bg_color: 0,0,.7,1
+
+                                MDGridLayout:
+                                    cols:6
+                                    adaptive_height: True
+                                    #md_bg_color: 0,0,.7,1
+
+                                    MDLabel:
+                                        text: "The Weather 2"
+                                        color: 1,1,1,1
+                                        id: day2
+                                    MDLabel:
+                                        text: "The Weather 2"
+                                        color: 1,1,1,1
+                                        id: day3
+                                        
+                                    MDLabel:
+                                        id: day4
+                                        text: "The Weather" 
+                                        color: 1,1,1,1                                    
+                                    MDLabel:
+                                        id: day5
+                                        text: "The Weather"
+                                        color: 1,1,1,1                                       
+                                    MDLabel:
+                                        id: day6
+                                        text: "The Weather 2"
+                                        color: 1,1,1,1
+                                    MDLabel:
+                                        id: day7
+                                        text: "The Weather" 
+                                        color: 1,1,1,1                                                                 
+
+                            MDBoxLayout:
+                                md_bg_color: 0,0,.5,1
 
                                 MDLabel:
                                     text: "The Weather 3" 
+                                    color: 1,1,1,1
 
         MDNavigationDrawer:
             id: nav_drawer
