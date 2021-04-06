@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules/
-node_modules/
+node_modules
 /.pnp
 .pnp.js
 
@@ -89,3 +89,16 @@ vendor/
 ### Symfony Patch ###
 /web/css/
 /web/js/
+
+/api//node_modules
+/api//public/hot
+/api/public/storage
+/storage/*.key
+/api/.env
+/api/.env.backup
+/api/.phpunit.result.cache
+/api/docker-compose.override.yml
+/api/Homestead.json
+/api/Homestead.yaml
+/api/npm-debug.log
+/api/yarn-error.log
