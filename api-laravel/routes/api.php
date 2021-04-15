@@ -4,7 +4,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\Api\ProxyController;
+use App\Http\Controllers\Api\ProxyApiController;
+use App\Http\Controllers\Api\ProxyFlaskApiController;
 use App\Http\Controllers\Api\RegisteredUserController;
 use App\Http\Controllers\Api\EventController;
 
@@ -39,7 +40,8 @@ Route::get("/user", [UserController::class, "getUsers"]);
 Route::post("/user/register", [UserController::class, "register"]);
 
 
-Route::get("/weather-data/{cityId}", [ProxyController::class, "store"]);
+Route::get("/weather-data/{cityId}", [ProxyApiController::class, "store"]);
+Route::get("/weather-data/{cityId}", [ProxyFlaskApiController::class, "store"]);
 
 Route::get("/event", [EventController::class, "show"]);
 Route::post("/event", [EventController::class, "store"]);
