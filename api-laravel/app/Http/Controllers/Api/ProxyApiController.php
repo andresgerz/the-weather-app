@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 
 
-class ProxyController extends Controller {
+class ProxyApiController extends Controller {
 
     const TTL = 604800;
     protected $key;
@@ -19,7 +19,7 @@ class ProxyController extends Controller {
     }
 
     /**
-     * get data from other API, if this key don't exist save data in chache    * and return data, otherwise don't save data in cache and only return it * from cache. 
+     * get data from other API, if this key don't exist save data in cache    * and return data, otherwise don't save data in cache and only return it * from cache. 
      * 
     */
 
