@@ -27,7 +27,7 @@ class ProxyFlaskApiController extends Controller {
         $this->key = $cityId;
         
         return json_encode($this->cache::remember($this->key, self::TTL, function() use ($cityId) {
-            return json_decode(HTTP::get('https://worldweather.wmo.int/en/json/' . $cityId . '_en.json'));  
+            return json_decode(HTTP::get('localhost:4004/' . $cityId));  
         }));
     }
 }
