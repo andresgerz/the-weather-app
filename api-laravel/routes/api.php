@@ -41,7 +41,7 @@ Route::post("/user/register", [UserController::class, "register"]);
 
 
 Route::get("/weather-data/{cityId}", [ProxyApiController::class, "store"]);
-Route::get("/weather-data/{cityId}", [ProxyFlaskApiController::class, "store"]);
+//Route::get("/weather-data/{cityId}", [ProxyFlaskApiController::class, "store"]);
 
 Route::get("/event", [EventController::class, "show"]);
 Route::post("/event", [EventController::class, "store"]);

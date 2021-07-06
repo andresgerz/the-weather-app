@@ -35,6 +35,8 @@ class User extends Model {
         'remember_token',
     ];
 
+    public $timestamps=false;
+
     /**
      * The attributes that should be cast to native types.
      *

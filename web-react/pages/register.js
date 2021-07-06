@@ -20,15 +20,17 @@ const schema = yup.object().shape({
 });
 
 
-function Login() {
+function Register() {
  
   return (
   <Layout>
+    <h1>Register</h1>
     <Formik
     validationSchema={schema}
     onSubmit={(values) => {
       
-      axios.post('/api/user/login', {
+      axios.post('http://weather-api.lndo.site/api/user/register', {
+        name: values.name,  
         email: values.email,
         password: values.password
       })
@@ -71,6 +73,18 @@ function Login() {
       }) => (
           <Form noValidate onSubmit={handleSubmit}>
           <Form.Row>
+            <Form.Group as={Col} md="4" controlId="validationFormik02">
+            <Form.Label>Name and Surname</Form.Label>
+            <Form.Control
+                type="name"
+                name="name"
+                value={values.name}
+                onChange={handleChange}
+                isValid={touched.name && !errors.name}
+            />
+
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
             <Form.Group as={Col} md="4" controlId="validationFormik01">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -95,7 +109,8 @@ function Login() {
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
-          <Button type="submit">Submit form</Button>
+          <Button className="" type="submit">Submit form</Button>
+          
         </Form>
         )}
       </Formik>
@@ -104,4 +119,4 @@ function Login() {
 }
 
 
-export default Login
+export default Register

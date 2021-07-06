@@ -31,10 +31,18 @@ class UserController extends Controller {
     }
 
     public function register(Request $request) {
+
+      /*   $user = new User;
+        $user->name = $request->input('name');
+        $user->email = $request->input('email'); 
+        $user->password = Hash::make($request->input('password'));
+        $user->save();
+
+        return response()->json(["hier" => $user]); */
         $validator  =   Validator::make($request->all(), [
             "name"  =>  "required",
             "email"  =>  "required|email",
-            "password"  =>  "required"
+            "password"  =>  "required",
         ]);
 
         if($validator->fails()) {
@@ -51,7 +59,7 @@ class UserController extends Controller {
         }
         else {
             return response()->json(["status" => "failed", "message" => "Registration failed!"]);
-        }       
+        }
     }
 
 
