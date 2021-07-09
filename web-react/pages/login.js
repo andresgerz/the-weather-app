@@ -24,6 +24,8 @@ const schema = yup.object().shape({
 
 function Login() {
  
+  const [message, setMessage] = useState("");
+
   return (
   <Layout>
     <h1>Login</h1>
@@ -31,13 +33,16 @@ function Login() {
     validationSchema={schema}
     onSubmit={(values) => {
       
-      axios.post('http://weather-api.lndo.site/user/login', {
+      axios.post('http://weather-api.lndo.site/api/user/login', {
         email: values.email,
         password: values.password
       })
       .then((res) => {
         console.log('response post login');
         console.log(res);
+
+        setMessage(res.data.message);
+
       })
       .catch((e) => {
         console.log('error post login');
@@ -98,6 +103,14 @@ function Login() {
               <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
+          {
+            message ? 
+            <div class="alert alert-danger" role="alert">
+              {message}
+            </div>  :
+            ""
+          }
+          <h1>{message}</h1>
           <Button className="" type="submit">Submit form</Button>
           <p>Do you are registered?</p>
           

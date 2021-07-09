@@ -32,13 +32,6 @@ class UserController extends Controller {
 
     public function register(Request $request) {
 
-      /*   $user = new User;
-        $user->name = $request->input('name');
-        $user->email = $request->input('email'); 
-        $user->password = Hash::make($request->input('password'));
-        $user->save();
-
-        return response()->json(["hier" => $user]); */
         $validator  =   Validator::make($request->all(), [
             "name"  =>  "required",
             "email"  =>  "required|email",
@@ -80,29 +73,18 @@ class UserController extends Controller {
         if(is_null($user)) {
             return response()->json(["status" => "failed", "message" => "Failed! email not found"]);
         }
-       
-        /* 
-        this code don't work
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password, $request->remember_token])){ 
-            
-        */
-        //var_dump($user);
-        //die();
-        
-        if(!is_null($user)){
 
-            $token = $user->createToken('token')->plainTextToken;
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            $user = Auth::user();
+            $token = $request->user()->createToken('token');
 
-            return response()->json([
-                "status" => "success", 
-                "login" => true, 
-                "token" => $token, 
-                "data" => $user
-                ]);
-        } else {
+            return response()->json(["status" => "success", "login" => true, "token" => $token->plainTextToken, "data" => $user]);
+        }
+        else {
             return response()->json(["status" => "failed", "success" => false, "message" => "Whoops! invalid password"]);
         }
     }
+
 
     public function user() {
         $user       =       Auth::user();

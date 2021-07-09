@@ -35,8 +35,8 @@ MIDDLEWARES
   }
 ); */
 
-Route::post("/user/login", [UserController::class, "login"]);
 Route::get("/user", [UserController::class, "getUsers"]);
+Route::post("/user/login", [UserController::class, "login"]);
 Route::post("/user/register", [UserController::class, "register"]);
 
 
