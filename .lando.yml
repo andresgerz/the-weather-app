@@ -1,14 +1,4 @@
-name: weather-api
-recipe: laravel
+name: api-symfony
+recipe: symfony
 config:
-  webroot: api-laravel/public
-
-services:
-  cache:
-    type: redis:2.8
-    portforward: 6380
-    persist: true
-
-tooling:
-  redis-cli:
-    service: cache
+  webroot: api-symfony/public
