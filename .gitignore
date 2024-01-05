@@ -18,3 +18,9 @@ api-symfony/.phpunit.result.cache
 api-symfony/.phpunit.result.cache
 api-symfony/phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+### Next.js ###
+node_modules/
+.next/
+.swc/
+.*.env
